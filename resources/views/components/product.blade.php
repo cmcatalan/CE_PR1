@@ -15,10 +15,10 @@
                     <div class="fs-5 mb-3">
                         @if ($product->is_sale)
                             <span class="badge text-bg-danger">Sale</span>
-                            <span class="text-decoration-line-through">{{$product->price}}€</span>
-                            <span>{{$product->sale_price}}€</span>
+                            <span class="text-decoration-line-through">{{number_format((double)$product->price, 2, '.', '')}}€</span>
+                            <span>{{number_format((double)$product->sale_price, 2, '.', '')}}€</span>
                         @else
-                            <span>{{$product->price}}€</span>
+                            <span>{{number_format((double)$product->price, 2, '.', '')}}€</span>
                         @endif
                     </div>
                     <p class="lead">{{$product->description}}</p>

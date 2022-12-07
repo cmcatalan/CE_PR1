@@ -72,7 +72,12 @@
                                 </div>
                             @endforeach
                         @endif
-                        <p class="text-end">Total: <span class="badge text-bg-dark">{{ $total }}€</span></p>
+                        <p class="text-end">
+                            Total:
+                            <span class="badge text-bg-dark">
+                                {{ number_format((double)$total, 2, '.', '')}}€
+                            </span>
+                        </p>
                         <div class="text-center">
                             <a href="/cart" class="btn btn-sm btn-dark btn-block">View all</a>
                         </div>
@@ -102,7 +107,9 @@
     </div>
 </footer>
 <script src="{{ asset('assets/third-parties/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('assets/third-parties/jquery/jquery-3.6.1.min.js')}}"></script>
 <script src="{{ asset('assets/js/main.js')}}"></script>
+@yield('scripts')
 </body>
 
 </html>
